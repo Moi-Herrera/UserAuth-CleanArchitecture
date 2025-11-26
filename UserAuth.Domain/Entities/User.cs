@@ -8,7 +8,7 @@ namespace UserAuth.Domain.Entities
 {
     public class User
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         public string Username { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
@@ -16,11 +16,7 @@ namespace UserAuth.Domain.Entities
         //Password protegida no se guardara en string
         //Password encriptada con HMAC-SHA512
         public Byte[] PasswordHash { get; set; } = Array.Empty<Byte>();
-        //Reforza el hash con salt
         public Byte[] PasswordSalt { get; set; } = Array.Empty<Byte>();
-
-        //rol:Admin, User, autorizacion basada en roles
-        public string Role { get; set; } = "User";
 
         //Fecha de creacion de cuenta
         public DateTime CreatedAt {  get; set; } = DateTime.UtcNow;

@@ -18,7 +18,10 @@ namespace UserAuth.Domain.Entities
         //fecha de creacion
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         //fecha en que se invalido 
-        public DateTime RevokedAT { get; set; }
+        public DateTime? RevokedAt { get; set; }
+        // indica si el token ya no es válido
+        public bool IsRevoked { get; set; }
+        public string? RevokedReason { get; set; }
 
         //Relacion con User
         public int UserId { get; set; }//Fk del usuario
